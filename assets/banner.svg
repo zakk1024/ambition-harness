@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="0.55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0b1522"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#3fb950"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="1.2" fill="#30363d"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#dots)" opacity="0.55"/>
+  <rect x="8" y="8" width="1264" height="624" rx="14" fill="none" stroke="#21262d" stroke-width="1.5"/>
+
+  <!-- eyebrow -->
+  <text x="64" y="86" font-size="19" letter-spacing="6" fill="#8b949e">AGENT SKILL · PROMPT COMPILER</text>
+
+  <!-- title -->
+  <text x="60" y="188" font-size="60" font-weight="bold" fill="#e6edf3"><tspan fill="#3fb950">❯_</tspan> ambition-harness</text>
+  <rect x="62" y="216" width="238" height="5" rx="2.5" fill="url(#acc)"/>
+
+  <!-- tagline -->
+  <text x="64" y="272" font-size="25" fill="#c9d1d9">Raise the task to an outcome.</text>
+  <text x="64" y="308" font-size="25" fill="#c9d1d9">Let something other than the author verify it.</text>
+
+  <!-- mini terminal card -->
+  <g>
+    <rect x="850" y="60" width="370" height="212" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <circle cx="878" cy="86" r="6" fill="#f85149"/><circle cx="898" cy="86" r="6" fill="#d29922"/><circle cx="918" cy="86" r="6" fill="#3fb950"/>
+    <text x="874" y="126" font-size="17" fill="#c9d1d9">$ check_claims.py claims.md</text>
+    <text x="874" y="158" font-size="17" fill="#3fb950">✔ 12 PASS   rc=0</text>
+    <text x="874" y="186" font-size="17" fill="#d29922">? 1 UNVERIFIED + 3-line probe</text>
+    <text x="874" y="214" font-size="17" fill="#8b949e">judge: blind ctx-agent</text>
+    <text x="874" y="248" font-size="16" fill="#58a6ff">verdict: per-claim, consumable done</text>
+  </g>
+
+  <!-- pipeline -->
+  <text x="64" y="392" font-size="17" letter-spacing="3" fill="#8b949e">THE STATE MACHINE</text>
+  <g font-size="20" font-weight="bold" text-anchor="middle">
+    <rect x="64"  y="416" width="188" height="56" rx="9" fill="#1c2128" stroke="#30363d"/>
+    <text x="158" y="450" fill="#e6edf3">COMPILE</text>
+    <rect x="292" y="416" width="188" height="56" rx="9" fill="#1c2128" stroke="#30363d"/>
+    <text x="386" y="450" fill="#e6edf3">AUDIT</text>
+    <rect x="520" y="416" width="188" height="56" rx="9" fill="#1c2128" stroke="#30363d"/>
+    <text x="614" y="450" fill="#e6edf3">EXECUTE</text>
+    <rect x="748" y="416" width="188" height="56" rx="9" fill="#12261a" stroke="#3fb950" stroke-width="2"/>
+    <text x="842" y="450" fill="#3fb950">JUDGE</text>
+    <rect x="976" y="416" width="188" height="56" rx="9" fill="#1c2128" stroke="#30363d"/>
+    <text x="1070" y="450" fill="#e6edf3">DONE</text>
+  </g>
+  <g stroke="#58a6ff" stroke-width="2.5" fill="#58a6ff">
+    <line x1="256" y1="444" x2="284" y2="444"/><path d="M284 444 l-8 -5 v10 z" stroke="none"/>
+    <line x1="484" y1="444" x2="512" y2="444"/><path d="M512 444 l-8 -5 v10 z" stroke="none"/>
+    <line x1="712" y1="444" x2="740" y2="444"/><path d="M740 444 l-8 -5 v10 z" stroke="none"/>
+    <line x1="940" y1="444" x2="968" y2="444"/><path d="M968 444 l-8 -5 v10 z" stroke="none"/>
+  </g>
+  <text x="842" y="498" font-size="15" fill="#7ee2b8" text-anchor="middle">outside-judge · blind · per-claim</text>
+
+  <!-- three flags -->
+  <g font-size="17">
+    <rect x="64" y="530" width="150" height="40" rx="20" fill="#1c2128" stroke="#30363d"/>
+    <text x="139" y="555" fill="#79c0ff" text-anchor="middle">--quick</text>
+    <rect x="228" y="530" width="170" height="40" rx="20" fill="#1c2128" stroke="#30363d"/>
+    <text x="313" y="555" fill="#79c0ff" text-anchor="middle">--no-crew</text>
+    <rect x="412" y="530" width="310" height="40" rx="20" fill="#1c2128" stroke="#30363d"/>
+    <text x="567" y="555" fill="#79c0ff" text-anchor="middle">--judge=ctx-agent|tests|…</text>
+  </g>
+
+  <!-- footer -->
+  <text x="1216" y="557" font-size="17" fill="#79c0ff" text-anchor="end">github.com/zakk1024/ambition-harness</text>
+  <text x="64" y="600" font-size="15" fill="#8b949e">Falsifiable verifier required · claims consumed, not counted · after Felix Rieseberg’s “How to be more ambitious”</text>
+</svg>
