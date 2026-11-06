@@ -48,3 +48,8 @@
 現象：假設審查無限膨脹，編譯期癱瘓，遲遲不開工。
 實測出處：機制本身無實證紀錄；證據等級敘事級（references/assumption-audit.md）。
 對沖回鏈：章 01 假設審查塊硬上限 3 條、各配最便宜證偽動作。
+
+## 10. 殘留漏掃
+現象：修復只掃自己記得的字串，同數字／同詞根的其他措辭留在檔案；收斂檔自述「已全部改掉」而實際殘留一處。
+實測出處：medaesthetics-recon——`run/sites/imcas/S4-media.md:27` 標題仍寫「56 個樣本」，`run/L1-CLOSURE.md:55` 宣稱兩處 56 皆已改；L2 盲審以此判 FAIL（逐字證據在 run/L2-BLIND-REVIEW.md）。
+對沖回鏈：SKILL.md 修復輪紀律「殘留掃描用寬鬆 pattern」「收斂檔不算證據」；章 02 judge——closure 自述不接受，須 CMD 重跑。

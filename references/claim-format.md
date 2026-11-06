@@ -16,6 +16,9 @@
 - 無 CMD 或 CMD 不可重跑→強制記 UNVERIFIED；UNVERIFIED 為合法終態，不是恥辱欄。
 - done 判定採消耗制（per-claim closure）：每宣稱閉合（PASS/FAIL）或顯式 UNVERIFIED；無數量門檻、通過率不作驗收（ADR-5）。
 - 對照組生成步驟若條件於受評物輸出，不得計入通過率（ADR-4）。
+- 欄位存在性檢查不分 VERDICT 值：UNVERIFIED 區塊同樣須 CMD／OUT／SOURCE-URL 齊備，三行模板（QUERY/WHERE/RESULT）是「附加」不是「替代」——合計七行，缺任一即 violation（parser 的 FIELDS 檢查先於 verdict 語意）。
+- 內部產物證據（腳本輸出、patch diff、本地量測檔）的 SOURCE-URL 用 `file://` 絕對路徑直接指證據檔——parser 只驗欄位存在；外部文獻才需入 `references/sources.md`。
+- claim record 寫完立即跑 `scripts/check_claims.py`，當 lint 用：預期首輪即抓缺欄，修完重跑至全 OK——人眼自查不可替代機器驗收，拖到 done 判定才跑只會把修正成本堆到終局。
 
 ## UNVERIFIED 三行模板（合法終態附件）
 

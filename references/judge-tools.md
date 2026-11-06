@@ -10,6 +10,7 @@
 | Claude Code hooks（如 PostToolUse） | 工具事件後跑檢查命令，輸出回饋 agent 當 judge 輸入 | 接法**待驗**（未於本專案實測） |
 | CI／本地測試與 lint（pytest、tsc、ruff…） | 以可重跑命令＋可判讀輸出充當 L2 | 常規；命令須寫入驗證器 CMD 欄 |
 | 官方 skill 機制（載入才計價） | frontmatter 僅 name+description 必需——本 skill 據此壓縮載入成本（SOURCE-URL: https://github.com/anthropics/skills/blob/main/spec/agent-skills-spec.md；https://github.com/anthropics/skills） | 已核（spec v1.1 全文） |
+| 單檔 HTML 交付物冒煙 | `node <skill>/scripts/smoke_html_cdp.mjs <file.html> [--shot out.png]`——headless Chrome CDP（node≥22 內建 WebSocket，免 playwright）：捕 console.error/exception/Log、計 `[data-slide]` 等 DOM 計數、`--shot` 存截圖 | 已驗（雙 fixture；紀律見下節） |
 
 ## L3 — 領域工具／資料回查
 
@@ -18,6 +19,12 @@
 | 測試 | pytest -x 等逐條輸出 | 湊綠防護：對照章 06 #2，驗證器獨立於被優化目標 |
 | 版本／環境 | pip freeze、套件註冊表比對 | 對照章 01 環境清單逐項 |
 | 資料回查 | 對一手源 grep 關鍵欄位（如世界紀錄成績頁） | 出處須在 references/sources.md 有條目 |
+
+## 單檔 HTML 冒煙紀律（smoke_html_cdp.mjs）
+
+- 先以 pass/fail 雙 fixture 驗證器本身（清潔檔→exit 0；含 console.error+ReferenceError 檔→exit 1 並列堆疊），才可信其對真產物的判定——judge 先自證，同 ADR-11 fixture 先行。
+- exit 語意：0 清潔／1 產物有錯／2 harness 自身故障。收尾清理須防護：headless Chrome 終結後仍非同步刷寫 profile dir，無 retries 的 rmSync 會 ENOTEMPTY 崩潰，把已判 pass 的 exit 染成 1——verifier 的 exit code 必須在防護式清理之後才計算。
+- 批次驗收 grep 全零且與 doer 自報矛盾：先單檔重 grep 再下判定——組合 `$()` 迴圈會靜默誤計，掃描器 bug 不等於 doer FAIL。
 
 ## run-dont-read（#72206 實測教訓）
 

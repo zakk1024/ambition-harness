@@ -5,8 +5,9 @@
 **A prompt-compiler skill for AI agents.** Tasks in. Verifiable outcomes out.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-3fb950)](LICENSE)
+![version](https://img.shields.io/badge/version-2.0.0-3fb950)
 ![shell](https://img.shields.io/badge/runtime-any%20agent-58a6ff)
-![size](https://img.shields.io/badge/core-54%20lines-8b949e)
+![size](https://img.shields.io/badge/core-71%20lines-8b949e)
 
 *English below · 中文說明在下半*
 
